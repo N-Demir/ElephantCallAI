@@ -13,8 +13,6 @@ print(auth_url)
 from boxsdk import LoggingClient
 # The fuck you only have 60 seconds to do this. Seems abusrda
 access_token, refresh_token = oauth.authenticate('Un0Zg8ptyWxfetjjI7JL1mvZFBs2iU2Q') # Enter auth code in here from redirect link
-print ("done")
-quit()
 
 # Hoping passing in refresh token here means it gets used
 oauth = OAuth2(
@@ -26,6 +24,7 @@ oauth = OAuth2(
 
 client = LoggingClient(oauth)
 user = client.user().get()
+print ("Beginning")
 print('User ID is {0}'.format(user.id))
 import os
 def download(folder, path):
@@ -39,6 +38,6 @@ def download(folder, path):
             client.file(file_id=item.id).download_to(output_file)
 
 
-shared_folder = client.get_shared_item("https://cornell.box.com/s/n0xesdrdrlq4ch96zl6zqwkkigfejrhw")
+shared_folder = client.get_shared_item("https://stanford.app.box.com/folder/120406029581?s=m286jb2r44nk6dw80urg3xjgggdcq88g")
 
-download(shared_folder, "/home/data/elephants/rawdata/DetectorDevelopment/")
+download(shared_folder, "/home/data/elephants/rawdata/NewLocationData/")
